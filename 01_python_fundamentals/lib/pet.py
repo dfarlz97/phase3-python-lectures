@@ -1,35 +1,29 @@
-import ipdb
+#!/usr/bin/env python3
+# Class Attributes and Methods 
 
+# import ipdb;
 class Pet:
+    
     count = 0
-    def __init__(self, name, species, age, size, temperment):
-        self.name = name
-        self.species = species
-        self.age = age
-        self.size = size
-        self.temperment = temperment
-        Pet.count += 1
 
+    def __init__(self,name, age, breed, temperament):
+        self.name = name
+        self.age = age
+        self.breed = breed
+        self.temperament = temperament
+        Pet.count += 1
+ 
+    
+    # 6✅. Create a class method that will print the pet count
+    @classmethod
+    def pet_count(cls): 
+        print(f"The number of pets: {cls.count}")
 
     def print_pet_details(self):
         print(f'''
-              name: {self.name}
-              species: {self.species}
-              age: {self.age}
-              size: {self.size}
-              temperment: {self.temperment}
-              ''')
+            name:{self.name}
+            age:{self.age}
+            breed:{self.breed}
+            temperament:{self.temperament}''')
         
-    def get_details_in_one_line(self):
-        print(f"{self.name} is a {self.temperment} {self.species}, who is {self.size} in size and {self.age} years old.")
-
-    @classmethod
-    def get_pet_count(Pet):
-        print(f"There are {Pet.count} pets")
-
-spot = Pet("Spot", "Dog", "6", "Medium", "Playful")
-rose = Pet("Rose", "Cat", "4", "Small", "Crazy")
-piper = Pet("Piper", "dog", "9", "medium", "mean")
-
-
-ipdb.set_trace()
+# ipdb.set_trace()
